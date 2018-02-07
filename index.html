@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <code id="code">
+
+    </code>
+</body>
+
+<script>
+    var model = { "uid": "microsoft.quantum.canon.adiabaticstateenergyunitary", "name": "AdiabaticStateEnergyUnitary", "type": "operation", "namespace": "Microsoft.Quantum.Canon", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"5\"> Convenience function that performs state preparation by applying a \n <code>statePrepUnitary</code> on the input state, followed by adiabatic state \n preparation using a <code>adiabaticUnitary</code>, and finally phase estimation \n with respect to <code>qpeUnitary</code>on the resulting state using a \n <code>phaseEstAlgorithm</code>.</p>\n", "syntax": "operation AdiabaticStateEnergyUnitary (statePrepUnitary : (Qubit[] => ()), adiabaticUnitary : (Qubit[] => ()), qpeUnitary : (Qubit[] => () : Adjoint, Controlled), phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double), qubits : Qubit[]) : Double\n\n\noperation AdiabaticStateEnergyUnitary\n\ncreating: \n\n         statePrepUnitary\n         adiabaticUnitary\n         qpeUnitary\n         phaseEstAlgorithm\n         qubits\n\n\nexperimenting: \n\n         {\"name\":\"statePrepUnitary\",\"summary\":\"<p sourcefile=\\\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\\\" sourcestartlinenumber=\\\"1\\\" sourceendlinenumber=\\\"2\\\"> An oracle representing state preparation for the initial dynamical\\n generator.</p>\\n\",\"isOperation\":true,\"input\":{\"types\":[{\"uid\":\"Qubit\",\"isPrimitive\":true,\"isArray\":true}]},\"output\":{\"types\":[{\"uid\":\"()\",\"isPrimitive\":true}]}}types:\"Qubit\"\n         {\"name\":\"adiabaticUnitary\",\"summary\":\"<p sourcefile=\\\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\\\" sourcestartlinenumber=\\\"1\\\" sourceendlinenumber=\\\"2\\\"> An oracle representing the adiabatic evolution algorithm to be used\\n to implement the sweeps to the final state of the algorithm.</p>\\n\",\"isOperation\":true,\"input\":{\"types\":[{\"uid\":\"Qubit\",\"isPrimitive\":true,\"isArray\":true}]},\"output\":{\"types\":[{\"uid\":\"()\",\"isPrimitive\":true}]}}types:\"Qubit\"\n         {\"name\":\"qpeUnitary\",\"summary\":\"<p sourcefile=\\\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\\\" sourcestartlinenumber=\\\"1\\\" sourceendlinenumber=\\\"3\\\"> An oracle representing a unitary operator $U$ representing evolution\\n for time $\\\\delta t$ under a dynamical generator with ground state\\n $\\\\ket{\\\\phi}$ and ground state energy $E = \\\\phi\\\\,\\\\delta t$.</p>\\n\",\"isOperation\":true,\"input\":{\"types\":[{\"uid\":\"Qubit\",\"isPrimitive\":true,\"isArray\":true}]},\"output\":{\"types\":[{\"uid\":\"()\",\"isPrimitive\":true}]},\"functors\":[\"Adjoint\",\"Controlled\"]}types:\"Qubit\"\n         {\"name\":\"phaseEstAlgorithm\",\"summary\":\"<p sourcefile=\\\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\\\" sourcestartlinenumber=\\\"1\\\" sourceendlinenumber=\\\"3\\\"> An operation that performs phase estimation on a given unitary operation.\\n See <a href=\\\"../libraries/characterization#iterative-phase-estimation\\\" data-raw-source=\\\"[iterative phase estimation](../libraries/characterization#iterative-phase-estimation)\\\" sourcefile=\\\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\\\" sourcestartlinenumber=\\\"2\\\" sourceendlinenumber=\\\"2\\\">iterative phase estimation</a>\\n for more details.</p>\\n\",\"isOperation\":true,\"input\":{\"types\":[{\"uid\":\"microsoft.quantum.canon.discreteoracle\"},{\"uid\":\"Qubit\",\"isPrimitive\":true,\"isArray\":true}]},\"output\":{\"types\":[{\"uid\":\"Double\",\"isPrimitive\":true}]}}types:\"microsoft.quantum.canon.discreteoracle\"\n         {\"name\":\"qubits\",\"summary\":\"<p sourcefile=\\\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\\\" sourcestartlinenumber=\\\"1\\\" sourceendlinenumber=\\\"1\\\"> A register of qubits to be used to perform the simulation.</p>\\n\",\"uid\":\"Qubit\",\"isPrimitive\":true,\"isArray\":true}\n        : Double\n\n\n\"operation\"\n\n\n\"AdiabaticStateEnergyUnitary\"", "input": { "content": "(statePrepUnitary : (Qubit[] => ()), adiabaticUnitary : (Qubit[] => ()), qpeUnitary : (Qubit[] => () : Adjoint, Controlled), phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double), qubits : Qubit[])", "types": [{ "name": "statePrepUnitary", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"2\"> An oracle representing state preparation for the initial dynamical\n generator.</p>\n", "isOperation": true, "input": { "types": [{ "uid": "Qubit", "isPrimitive": true, "isArray": true }] }, "output": { "types": [{ "uid": "()", "isPrimitive": true }] } }, { "name": "adiabaticUnitary", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"2\"> An oracle representing the adiabatic evolution algorithm to be used\n to implement the sweeps to the final state of the algorithm.</p>\n", "isOperation": true, "input": { "types": [{ "uid": "Qubit", "isPrimitive": true, "isArray": true }] }, "output": { "types": [{ "uid": "()", "isPrimitive": true }] } }, { "name": "qpeUnitary", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"3\"> An oracle representing a unitary operator $U$ representing evolution\n for time $\\delta t$ under a dynamical generator with ground state\n $\\ket{\\phi}$ and ground state energy $E = \\phi\\,\\delta t$.</p>\n", "isOperation": true, "input": { "types": [{ "uid": "Qubit", "isPrimitive": true, "isArray": true }] }, "output": { "types": [{ "uid": "()", "isPrimitive": true }] }, "functors": ["Adjoint", "Controlled"] }, { "name": "phaseEstAlgorithm", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"3\"> An operation that performs phase estimation on a given unitary operation.\n See <a href=\"../libraries/characterization#iterative-phase-estimation\" data-raw-source=\"[iterative phase estimation](../libraries/characterization#iterative-phase-estimation)\" sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"2\" sourceendlinenumber=\"2\">iterative phase estimation</a>\n for more details.</p>\n", "isOperation": true, "input": { "types": [{ "uid": "microsoft.quantum.canon.discreteoracle" }, { "uid": "Qubit", "isPrimitive": true, "isArray": true }] }, "output": { "types": [{ "uid": "Double", "isPrimitive": true }] } }, { "name": "qubits", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"1\"> A register of qubits to be used to perform the simulation.</p>\n", "uid": "Qubit", "isPrimitive": true, "isArray": true }] }, "output": { "content": "Double", "types": [{ "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"2\"> An estimate $\\hat{\\phi}$ of the ground state energy $\\phi$\n of the generator represented by $U$.</p>\n", "uid": "Double", "isPrimitive": true }] }, "_docfxVersion": "2.29.0.0", "show_latex": true, "latex_macros": { "ket": ["\\left| #1\\right\\rangle", 1], "bra": ["\\left\\langle #1\\right|", 1], "braket": ["\\left\\langle #1 \\right\\rangle", 1], "boldone": "\\mathbf{1}", "expect": "\\mathbb{E}", "variance": "\\operatorname{Var}" }, "version": null, "locale": "en-us", "_op_openToPublicContributors": false, "_op_articleFileGitCommitHistory": [{ "author_name": "Adam Kinney", "author_email": "adkinn@microsoft.com", "committer_name": "Adam Kinney", "comitter_email": "adkinn@microsoft.com", "message": "updating content to latest", "commit_sha": "8e7ce7ef12ef8977cf0ca7d54d3501d494bae52f", "commit_date": "2018-01-03 11:29:41 -0800" }], "_op_articleFileGitCommit": "https://github.com/MicrosoftDocs/qflat-sandbox/blob/8e7ce7ef12ef8977cf0ca7d54d3501d494bae52f/qflat-sandbox/api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml", "_op_articleFileGitUrl": "https://github.com/MicrosoftDocs/qflat-sandbox/blob/master/qflat-sandbox/api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml", "open_to_public_contributors": false, "updated_at": "2018-01-03 07:31 PM", "author": "Adam Kinney", "_op_gitContributorInformation": { "author": { "name": "Adam Kinney" }, "contributors": [], "update_at": "1/3/2018", "updated_at_date_time": "2018-01-03T19:31:38.063Z" }, "_lang": "csharp", "_tocPath": "toc.json", "_navPath": "toc.json", "_rel": "../", "_path": "api/microsoft.quantum.canon.adiabaticstateenergyunitary.html", "_key": "api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml", "_navRel": "../toc.json", "_tocRel": "../toc.json", "_navKey": "~/toc.yml", "_tocKey": "~/toc.yml", "__global": { "acceptedValues": "accepted values", "additionalFeaturesAndRequirements": "Additional features and requirements", "advanced": "Advanced", "appliesTo": "Applies to", "attributes": "Attributes", "beginner": "Beginner", "businessUser": "Business User", "capabilities": "Capabilities", "caution": "<p>Caution</p>", "classesInSubtitle": "Classes", "clsCompliant": "This API is not CLS-compliant.", "clsCompliantAlt": "CLS-compliant alternative", "commands": "Commands", "constructorsInSubtitle": "Constructors", "defaultValue": "default value", "definition": "Definition", "delegatesInSubtitle": "Delegates", "deprecated": "This API is now obsolete.", "derived": "Derived", "description": "Description", "developers": "Developers", "edit": "Edit", "eiisInSubtitle": "Explicit Interface Implementations", "enumsInSubtitle": "Enums", "eventsInSubtitle": "Events", "examples": "Examples", "exceptions": "Exceptions", "extensionMethodsInSubtitle": "Extension Methods", "fieldsInSubtitle": "Fields", "fieldValue": "Field Value", "flagsAttributeDisclaimer": "This enumeration has a {0} attribute that allows a bitwise combination of its member values.", "functionsInSubtitle": "Functions", "globalParameters": "Global Parameters", "implements": "Implements", "important": "<p>Important</p>", "in": "in", "inheritance": "Inheritance", "inheritedMembers": "Inherited Members", "input": "Input", "interfacesInSubtitle": "Interfaces", "intermediate": "Intermediate", "internalUseOnly": "This API supports the product infrastructure and is not intended to be used directly from your code.", "inThisArticle": "In This Article", "itPro": "IT Pro", "loadMore": "More&#8230;", "members": "Members", "methodsInSubtitle": "Methods", "minutes_abbreviation": "{0}m", "name": "Name", "namespace": "Namespace", "namespaces": "Namespaces", "next": "Next Steps", "note": "<p>Note</p>", "notesToCallers": "Notes to Callers", "notesToImplementers": "Notes to Implementers", "notesToInheritors": "Notes to Inheritors", "operatorsInSubtitle": "Operators", "optionalParameters": "Optional Parameters", "output": "Output", "overloads": "Overloads", "overrides": "Overrides", "package": "Package", "packages": "Packages", "parameters": "Parameters", "preview": "This API is in preview.", "previewTypescript": "This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.", "propertiesInSubtitle": "Properties", "propertyValue": "Property Value", "readonly": "read only", "references": "References", "remarks": "Remarks", "requestBodyCanBeFollowing": "The request body can be one of the following:", "required": "required", "requiredParameters": "Required Parameters", "returns": "Returns", "returnValue": "Return Value", "security": "Security", "seeAlso": "See Also", "services": "Services", "showAllDerived": "Show all derived classes", "structsInSubtitle": "Structs", "threadSafety": "Thread Safety", "tip": "<p>Tip</p>", "tutorial_allContributors": "all {0} contributors", "tutorial_complete100": "100% complete!", "tutorial_congratulations": "Congratulations!", "tutorial_continueHere": "Continue Here", "tutorial_contributors": "Contributors", "tutorial_furtherReading": "Further Reading", "tutorial_introduction": "Introduction", "tutorial_minsRemaining": "{0} minutes remaining", "tutorial_minutesToComplete": "{0} minutes to complete", "tutorial_next": "Next", "tutorial_nextSteps": "Next steps", "tutorial_nextTutorial": "Next Tutorial", "tutorial_previous": "Previous", "tutorial_resources": "Resources", "tutorial_seeAllContributors": "See {0} or become a contributor by suggesting improvements on {1}.", "tutorial_youLearned": "You learned how to...", "tutorial_youveCompleted": "You've completed the \"{0}\" tutorial.", "tutorial_youWillLearn": "You will learn how to...", "type": "type", "typeDefinition": "Type Definition", "typeParameters": "Type Parameters", "usage": "Usage", "value": "Value", "valueFrom": "value from", "warning": "<p>Warning</p>", "win10Requirements": "Windows 10 requirements", "_shared": {} }, "_op_contentTemplate": "QSharpType" }
+
+
+    var code = document.getElementById('code');
+
+
+    function createSpaces(number) {
+        var spaces = '';
+        for (var i = 0; i < number; i++) {
+            spaces += ' ';
+        }
+        return spaces;
+    }
+
+
+    function formatCode(model) {
+
+        var syntax = model.syntax;
+        indentLength = model.type.length;
+
+        var spaceString = createSpaces(indentLength),
+            outputSpace = createSpaces(indentLength - 1),
+            outputParamSpace = createSpaces(indentLength - 2);
+
+        // split upt input based on commas, add \n and space
+
+        var input = JSON.stringify(model.input.types);
+        var realInput = '\n\ncreating: \n';
+
+        // HEEEERRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+        for (var i = 0; i < model.input.types.length; i++) {
+            // check for no inputs
+            realInput += "\n" + spaceString + " (" + model.input.types[i].name;
+
+            if (model.input.types[i].input) {
+                realInput += " : (";
+
+                if (model.input.types[i].input.types) {
+                    for (var j = 0; j < model.input.types[i].input.types.length; j++) {
+                        realInput += model.input.types[i].input.types[j].uid;
+
+                        if (model.input.types[i].input.types[j].isArray) {
+                            realInput += '[]';
+                        }
+
+                        if (model.input.types[i].input.types[j + 1]) {
+                            realInput += ', '
+                        }
+                    }
+
+                    if (model.input.types[i].isOperation) {
+                        realInput += ' => ';
+                    }
+
+                    if (model.input.types[i].output && model.input.types[i].output.types) {
+
+
+                        if (model.input.types[i].functors) {
+                            for (var k = 0; k < model.input.types[i].functors.length; k++) {
+                                realInput += model.input.types[i].functors[k];
+
+                                if (model.input.types[i].functors[k + 1]) {
+                                    realInput += ', ';
+                                }
+                            }
+                        } else {
+                            for (var k = 0; k < model.input.types[i].output.types.length; k++) {
+                                realInput += model.input.types[i].output.types[k].uid;
+                            }
+                        }
+
+
+
+                    }
+                }
+
+                realInput += ")"
+            } else {
+                // question this logic
+                realInput += ' => ';
+
+                if (model.input.types[i].uid) {
+                    realInput += model.input.types[i].uid;
+                }
+
+                if (model.input.types[i].isArray) {
+                    realInput += '[]';
+                }
+                realInput += ")"
+
+
+            }
+
+
+    
+
+
+
+            var hello = {
+                "name": "qpeUnitary",
+                "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"3\"> An oracle representing a unitary operator $U$ representing evolution\n for time $\\delta t$ under a dynamical generator with ground state\n $\\ket{\\phi}$ and ground state energy $E = \\phi\\,\\delta t$.</p>\n",
+                "isOperation": true,
+                "input": { "types": [{ "uid": "Qubit", "isPrimitive": true, "isArray": true }] },
+                "output": { "types": [{ "uid": "()", "isPrimitive": true }] },
+                "functors": ["Adjoint", "Controlled"]
+            };
+
+            var qbit = {
+                "name": "qubits", "summary": "<p sourcefile=\"api/microsoft.quantum.canon.adiabaticstateenergyunitary.yml\" sourcestartlinenumber=\"1\" sourceendlinenumber=\"1\"> A register of qubits to be used to perform the simulation.</p>\n",
+                "uid": "Qubit",
+                "isPrimitive": true,
+                "isArray": true
+            }
+
+
+        }
+
+        realInput += '\n\n\nexperimenting: \n';
+
+        for (var i = 0; i < model.input.types.length; i++) {
+            // check for no inputs
+            realInput += "\n" + spaceString + JSON.stringify(model.input.types[i]) + "\n";
+
+            // if (model.input.types[i].input) {
+            //     realInput += "types:" + JSON.stringify(model.input.types[i].input.types[0].uid);
+            // }
+            // inputTypes
+        }
+
+        return realInput
+    }
+
+
+    code.innerText = model.syntax;
+    code.innerText += formatCode(model);
+
+</script>
+
+</html>
