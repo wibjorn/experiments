@@ -23,11 +23,20 @@ if (process.argv[2]) {
     console.log(`Nothing passed in, searching and replacing in current folder and its children`)
 }
 
-replace(options)
-    .then(changes => {
-        console.log('Modified files:', changes.join(',\n'));
-        console.log(changes.length + ' files modified');
-    })
-    .catch(error => {
-        console.error('Error occurred:', error);
-    });
+// replace(options)
+//     .then(changes => {
+//         console.log('Modified files:', changes.join(',\n'));
+//         console.log(changes.length + ' files modified');
+//     })
+//     .catch(error => {
+//         console.error('Error occurred:', error);
+//     });
+
+try {
+    const changes = replace.sync(options);
+    console.log('Modified files:', changes.join(', '));
+    console.log(changes.length, ' files modified.');
+}
+catch (error) {
+    console.error('Error occurred:', error);
+}
